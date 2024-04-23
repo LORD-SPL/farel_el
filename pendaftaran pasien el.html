@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="en"
+<head>
+<meta charset="UTF-8">
+
+<title>formulir pendaftaran pasien rumah sakit anak bunda</title>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">formulir pendaftaran pasien </h1>
+<h1 style="text-align:center;">rumah sakit anak bunda<h1>
+<h1 style="text-align:center;">__________________________</h1>
+<h1 style="text-align:center;">---------------------------------------</h1>
+
+<form style="text-align:center;" id="forminput">
+	<label style="font-size:170%;"> nama lengkap:</label>
+	<input type="text" id="nama">
+	<br>
+	<label style="font-size:170%;">usia:</label>
+	<input type="number" id="usia">
+	<br>
+	<label style="font-size:170%;"> poli:</label>
+	<input type="text" id="poli">
+	<br>
+	<label style="font-size:170%;">tanggal periksa:</label>
+	<input type="date" id="tanggal">
+	<br>
+	
+	<button onclick="tampilkanhasil()">daftar</button>
+</form>
+<script>
+function tampilkanhasil() {
+	var nama = document.getElementById("nama").value;
+	var poli = document.getElementById("poli").value;
+	var tanggal = document.getElementById("tanggal").value;
+	var date = new Date(tanggal);
+	var options = { day: 'numeric', month: 'long', year: 'numeric' };
+	var tanggalString = date.toLocaleDateString('id-ID', options);
+	document.write("<h1 style='text-align:center;'>selamat anda berhasil daftar</h1>");
+	document.write("<h2 style='text-align:center;'>nama : "+nama+"</h2>");
+	document.write("<h2 style='text-align:center;'>poli : "+poli+"</h2>");
+	document.write("<h2 style='text-align:center;'>tanggal periksa : "+tanggalString+"</h2>");
+	document.write("<h2 style='text-align:center;'>nomor urut : 8</h2>");
+}
+</script>
+</body>
+</html>
